@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<!-- saved from url=(0066)file:///C:/Users/Marise%20Miranda/Downloads/Marises%20Machine.html -->
+<!-- Modified with authorization-->
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Windows XP Conversor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="body">
+    <audio autoplay loop>
+        <source src="windowsxpmusic.mp3" type="audio/mp3">
+    </audio>
+    <center>
+        <h1 id="tituloXP" class="tituloXP">
+            </div><img src="pngegg.png" width="50" height="50">Windows XP Conversor</h1><br>
+        <p id="textoXP">Conversor númerico estilo <i><b>WINDOWS XP</b></i></p>
+
+        <br><br>
+
+        <h3 style="font-family: Verdana, Geneva, Tahoma, sans-serif;">Insira o valor em <strong>decimal</strong></h3>
+        <input id="demo1" type="text" class="demo1" placeholder="Digite o valor em decimal">
+
+        <br><br>
+
+        <h3 style="font-family: Verdana, Geneva, Tahoma, sans-serif;">Converter para:</h3>
+        <br>
+        <input onclick="aparecer_octal()" id="ipt_octal" type="checkbox"><b>Octal</b>
+        <br>
+        <div class="demo2" id="demo2"></div>
+
+        <br><br>
+
+        <input onclick="aparecer_hexa()" id="ipt_hexa" type="checkbox"><b>Hexadecimal</b>
+        <br>
+        <div class="demo3" id="demo3"></div>
+
+        <br><br>
+
+        <input onclick="aparecer_bin()" id="ipt_bin" type="checkbox"><b>Binário</b>
+        <br>
+        <div class="demo4" id="demo4"></div>
+
+        <br><br>
+
+        <button onclick="converter()">Converter</button>
+    </center>
+    <script>
+
+        function converter() {
+            if (ipt_bin.checked || ipt_hexa.checked || ipt_octal.checked) {
+                var decimal = Number(demo1.value);
+
+                let octal = decimal.toString(8);
+
+                let hexadecimal = decimal.toString(16);
+
+                let binaria = decimal.toString(2);
+
+                console.log(decimal);
+                console.log(octal);
+                console.log(hexadecimal);
+                console.log(binaria);
+
+                document.getElementById("demo1").innerHTML = ` ${decimal}`;
+                document.getElementById("demo2").innerHTML = ` ${octal}`;
+                document.getElementById("demo3").innerHTML = ` ${hexadecimal}`;
+                document.getElementById("demo4").innerHTML = ` ${binaria}`;
+            } else {
+                alert('Nenhuma base foi selecionada, não é possivel converter')
+                console.error("ERRO nao foi possivel converter")
+            }
+
+
+
+
+        }
+
+        function aparecer_bin() {
+            demo4.style.display = 'block'
+        }
+
+        function aparecer_hexa() {
+            demo3.style.display = 'block'
+        }
+
+        function aparecer_octal() {
+            demo2.style.display = 'block'
+        }
+        document.bgColor = "#00ffff";
+    </script>
+</body>
+
+</html>
